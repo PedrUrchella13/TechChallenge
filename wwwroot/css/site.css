@@ -1918,3 +1918,239 @@ header .navbar .tc-auth-nav a.tc-nav-button:focus-visible {
     max-width: 140px !important;
   }
 }
+
+/* ==========================================================================
+   USUÁRIOS — TABELA / AÇÕES
+   ========================================================================== */
+
+.usuarios-container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 3rem auto;
+}
+
+/* Tabela */
+
+.usuarios-container .table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    background-color: var(--tc-paper);
+    border: var(--tc-border);
+}
+
+.usuarios-container .table th {
+    background-color: var(--tc-ink);
+    color: var(--tc-paper);
+
+    font-family: var(--tc-font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+
+    padding: 0.9rem;
+    border: 2px solid var(--tc-ink);
+}
+
+.usuarios-container .table td {
+    padding: 0.9rem;
+    border: 2px solid var(--tc-ink);
+
+    vertical-align: middle;
+}
+
+/* Largura das colunas */
+
+.usuarios-container .table th:nth-child(1),
+.usuarios-container .table td:nth-child(1) {
+    width: 38%;
+}
+
+.usuarios-container .table th:nth-child(2),
+.usuarios-container .table td:nth-child(2) {
+    width: 15%;
+}
+
+.usuarios-container .table th:nth-child(3),
+.usuarios-container .table td:nth-child(3) {
+    width: 47%;
+}
+
+/* Área dos botões */
+
+.usuario-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+
+    flex-wrap: wrap;
+}
+
+/* Botões */
+
+.usuario-btn {
+    width: 115px;
+    height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.5rem;
+
+    box-sizing: border-box;
+
+    border: var(--tc-border);
+    border-radius: 0;
+
+    font-family: var(--tc-font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease;
+}
+
+/* Tornar Admin */
+
+.usuario-btn--admin {
+    background-color: var(--tc-success);
+    color: var(--tc-paper);
+    box-shadow: 4px 4px 0 var(--tc-ink);
+}
+
+/* Editar */
+
+.usuario-btn--editar {
+    background-color: var(--tc-ocean);
+    color: var(--tc-paper);
+    box-shadow: 4px 4px 0 var(--tc-ink);
+}
+
+/* Trocar Perfil */
+
+.usuario-btn--perfil {
+    background-color: var(--tc-paper-2);
+    color: var(--tc-ink);
+    box-shadow: 4px 4px 0 var(--tc-ink);
+}
+
+/* Excluir */
+
+.usuario-btn--excluir {
+    background-color: var(--tc-danger);
+    color: var(--tc-paper);
+    box-shadow: 4px 4px 0 var(--tc-ink);
+}
+
+/* Hover */
+
+.usuario-btn:hover {
+    color: var(--tc-paper);
+    text-decoration: none;
+
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--tc-ink);
+}
+
+/* Perfil ADMIN */
+
+.usuario-admin-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 115px;
+    height: 42px;
+
+    box-sizing: border-box;
+
+    background-color: var(--tc-success);
+    color: var(--tc-paper);
+
+    border: var(--tc-border);
+
+    font-family: var(--tc-font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+
+    box-shadow: 4px 4px 0 var(--tc-ink);
+}
+
+/* Novo usuário */
+
+.usuario-novo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 1rem;
+
+    padding: 0.75rem 1.2rem;
+
+    background-color: var(--tc-ocean);
+    color: var(--tc-paper);
+
+    border: var(--tc-border);
+    border-radius: 0;
+
+    box-shadow: 5px 5px 0 var(--tc-ink);
+
+    font-family: var(--tc-font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease;
+}
+
+.usuario-novo-btn:hover {
+    color: var(--tc-paper);
+    text-decoration: none;
+
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 var(--tc-ink);
+}
+
+
+/* ==========================================================================
+   USUÁRIOS — RESPONSIVO
+   ========================================================================== */
+
+@media (max-width: 900px) {
+
+    .usuarios-container {
+        padding: 0 1rem;
+    }
+
+    .usuarios-container .table {
+        font-size: 0.85rem;
+    }
+
+    .usuario-acoes {
+        justify-content: flex-start;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .usuarios-container {
+        overflow-x: auto;
+    }
+
+    .usuarios-container .table {
+        min-width: 800px;
+    }
+
+}
