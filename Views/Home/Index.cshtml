@@ -3,17 +3,91 @@
     var teste = "Ola, bem vindo";
 }
 
-<div class="container text-center mt-5">
-    <h1 class="display-4 fw-bold">@teste</h1>
-    <p class="lead text-muted">Plataforma de Projetos e Inovação Estudantil</p>
+<section class="tc-hero">
+    <div class="tc-hero-frame">
+        <span class="tc-mark tc-mark--tl" aria-hidden="true"></span>
+        <span class="tc-mark tc-mark--tr" aria-hidden="true"></span>
+        <span class="tc-mark tc-mark--bl" aria-hidden="true"></span>
+        <span class="tc-mark tc-mark--br" aria-hidden="true"></span>
 
-    <hr class="my-4"/>
+        <div class="tc-stamp" aria-hidden="true">
+            <span>EST.</span>
+            <strong>2026</strong>
+        </div>
 
-    <p class="fs-5">O lugar onde suas ideias viram projetos reais</p>
+        <p class="tc-eyebrow">PLATAFORMA&nbsp;&middot;&nbsp;DESAFIOS&nbsp;&middot;&nbsp;RANKING&nbsp;&mdash;&nbsp;Nº&nbsp;01</p>
 
-    <ul class="list-unstyled mt-4 fs-5">
-        <li>✅ Crie equipes e projetos</li>
-        <li>✅ Participe de desafios</li>
-        <li>✅ Ganhe pontos e suba no ranking</li>
+        <h1 class="tc-display">
+            <span class="tc-display-hello">@teste</span>
+            <span class="tc-display-brand">TECH<br />CHALLENGE</span>
+        </h1>
+
+        <p class="tc-lead">Plataforma de Projetos e Inovação Estudantil</p>
+
+        <div class="tc-divider" aria-hidden="true"></div>
+
+        <p class="tc-tagline">O lugar onde suas ideias viram <strong>projetos reais</strong>.</p>
+
+        <dl class="tc-stats">
+            <div class="tc-stat">
+                <dt class="tc-stat-label">Equipes</dt>
+                <dd class="tc-stat-value">ATIVAS</dd>
+            </div>
+            <div class="tc-stat">
+                <dt class="tc-stat-label">Desafios</dt>
+                <dd class="tc-stat-value">EM&nbsp;ABERTO</dd>
+            </div>
+            <div class="tc-stat">
+                <dt class="tc-stat-label">Ranking</dt>
+                <dd class="tc-stat-value">AO&nbsp;VIVO</dd>
+            </div>
+        </dl>
+    </div>
+</section>
+
+<section class="tc-panel-grid" aria-hidden="true">
+    <div class="tc-panel tc-panel--code">
+        <span class="tc-panel-tag">terminal</span>
+        <pre class="tc-code">&gt; equipe.criar("Squad_04")
+&gt; projeto.iniciar()
+&gt; desafio.aceitar("API_REST")
+&gt; pontos += 150
+<span class="tc-code-caret">_</span></pre>
+    </div>
+    <div class="tc-panel tc-panel--grid">
+        <span class="tc-panel-tag">progresso</span>
+        <span class="tc-panel-big">MAPA</span>
+        <span class="tc-panel-big">DE&nbsp;ROTAS</span>
+    </div>
+    <div class="tc-panel tc-panel--podium">
+        <span class="tc-panel-tag">ranking</span>
+        <div class="tc-podium">
+            <div class="tc-podium-bar tc-podium-bar--2"><span>2</span></div>
+            <div class="tc-podium-bar tc-podium-bar--1"><span>1</span></div>
+            <div class="tc-podium-bar tc-podium-bar--3"><span>3</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="tc-checklist-section">
+    <h2 class="tc-section-title">Como funciona</h2>
+    <ul class="tc-checklist">
+        <li class="tc-check-item">
+            <span class="tc-check-index">01</span>
+            <span class="tc-check-text">Crie equipes e projetos</span>
+        </li>
+        <li class="tc-check-item">
+            <span class="tc-check-index">02</span>
+            <span class="tc-check-text">Participe de desafios</span>
+        </li>
+        <li class="tc-check-item">
+            <span class="tc-check-index">03</span>
+            <span class="tc-check-text">Ganhe pontos e suba no ranking</span>
+        </li>
     </ul>
-</div>
+</section>
+
+<section class="tc-cta">
+    <a class="tc-btn tc-btn--primary" asp-controller="Projetos" asp-action="Index">Ver Projetos</a>
+    <a class="tc-btn tc-btn--ghost" asp-controller="Equipes" asp-action="Index">Minhas Equipes</a>
+</section>

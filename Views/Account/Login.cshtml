@@ -1,16 +1,151 @@
-@model TechChallenge.LoginViewModel;
+@model TechChallenge.LoginViewModel
+
 @{
     ViewData["Title"] = "Login";
 }
-<form asp-action="Login" method="post">
-    <input asp-for="Email" class="form-control"/>
-    <span asp-validation-for="Email"></span>
 
-    <input asp-for="Senha" class="form-control" type="password"/>
-    <span asp-validation-for="Senha"></span>
+<div class="auth-page">
+    <div class="auth-grid">
 
-    <input asp-for="Lembrar" type="checkbox"/>
-    <label asp-for="Lembrar">Lembrar-me</label>
+        <!-- BLOCO VISUAL -->
+        <section class="auth-intro">
+            <div class="auth-intro-top">
+                <span class="auth-code">TC // AUTH_001</span>
+                <span class="auth-status">
+                    <span class="status-dot"></span>
+                    SYSTEM ONLINE
+                </span>
+            </div>
 
-    <button type="submit">Entrar</button>
-</form>
+            <div class="auth-intro-content">
+                <span class="auth-eyebrow">TECHCHALLENGE / ACCESS</span>
+
+                <h1>
+                    ENTRE.<br />
+                    CONECTE.<br />
+                    <span>APRENDA.</span>
+                </h1>
+
+                <div class="auth-line"></div>
+
+                <p>
+                    Acesse sua conta e continue sua jornada
+                    dentro do ecossistema TechChallenge.
+                </p>
+            </div>
+
+            <div class="auth-decoration">
+                <div class="auth-circle"></div>
+                <div class="auth-cross auth-cross-1"></div>
+                <div class="auth-cross auth-cross-2"></div>
+
+                <div class="auth-coordinate">
+                    23°32'51"S<br />
+                    46°38'10"W
+                </div>
+            </div>
+
+            <div class="auth-intro-footer">
+                <span>EST. 2026</span>
+                <span>ACCESS NODE / 01</span>
+            </div>
+        </section>
+
+        <!-- FORMULÁRIO -->
+        <section class="auth-form-section">
+
+            <div class="auth-form-header">
+                <div>
+                    <span class="auth-form-index">01 / 02</span>
+                    <h2>LOGIN</h2>
+                </div>
+
+                <div class="auth-symbol">
+                    ↗
+                </div>
+            </div>
+
+            <div class="auth-form-divider"></div>
+
+            <form asp-action="Login" method="post" class="auth-form">
+
+                <div asp-validation-summary="ModelOnly"
+                     class="auth-validation">
+                </div>
+
+                <div class="auth-field">
+                    <label asp-for="Email">
+                        E-MAIL
+                    </label>
+
+                    <div class="auth-input-wrap">
+                        <span class="auth-input-prefix">&gt;_</span>
+
+                        <input asp-for="Email"
+                               class="auth-input"
+                               type="email"
+                               placeholder="seu@email.com"
+                               autocomplete="email" />
+                    </div>
+
+                    <span asp-validation-for="Email"
+                          class="auth-field-error">
+                    </span>
+                </div>
+
+                <div class="auth-field">
+                    <label asp-for="Senha">
+                        SENHA
+                    </label>
+
+                    <div class="auth-input-wrap">
+                        <span class="auth-input-prefix">#</span>
+
+                        <input asp-for="Senha"
+                               class="auth-input"
+                               type="password"
+                               placeholder="••••••••"
+                               autocomplete="current-password" />
+                    </div>
+
+                    <span asp-validation-for="Senha"
+                          class="auth-field-error">
+                    </span>
+                </div>
+
+                <div class="auth-options">
+                    <label class="auth-checkbox">
+                        <input asp-for="Lembrar" type="checkbox" />
+                        <span class="auth-checkbox-box"></span>
+                        <span>LEMBRAR-ME</span>
+                    </label>
+
+                    <span class="auth-security">
+                        SECURE CONNECTION
+                    </span>
+                </div>
+
+                <button type="submit" class="auth-submit">
+                    <span>ENTRAR</span>
+                    <strong>→</strong>
+                </button>
+
+            </form>
+
+            <div class="auth-form-footer">
+                <span>NÃO POSSUI UMA CONTA?</span>
+
+                <a asp-controller="Account"
+                   asp-action="Register">
+                    CRIAR CONTA <span>↗</span>
+                </a>
+            </div>
+
+        </section>
+
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

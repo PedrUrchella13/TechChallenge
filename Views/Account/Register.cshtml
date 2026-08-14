@@ -4,112 +4,204 @@
     ViewData["Title"] = "Cadastro";
 }
 
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card shadow">
-                <div class="card-header bg-primary text-white">
-                    <h4 class="mb-0">
-                        Criar Conta
-                    </h4>
+<div class="auth-page">
+    <div class="auth-grid auth-grid-register">
+
+        <!-- BLOCO VISUAL -->
+        <section class="auth-intro">
+            <div class="auth-intro-top">
+                <span class="auth-code">TC // REG_002</span>
+                <span class="auth-status">
+                    <span class="status-dot"></span>
+                    SYSTEM ONLINE
+                </span>
+            </div>
+
+            <div class="auth-intro-content">
+                <span class="auth-eyebrow">TECHCHALLENGE / IDENTITY</span>
+
+                <h1>
+                    CRIE SUA<br />
+                    <span>IDENTIDADE.</span>
+                </h1>
+
+                <div class="auth-line"></div>
+
+                <p>
+                    Entre para o TechChallenge e faça parte
+                    da rede de aprendizagem.
+                </p>
+            </div>
+
+            <div class="register-terminal">
+                <div class="terminal-header">
+                    <span>USER_REGISTRY</span>
+                    <span>● ● ●</span>
                 </div>
 
-                <div class="card-body">
-                    <form asp-action="Register" method="post">
-                        <div asp-validation-summary="ModelOnly"
-                            class="text-danger">
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="Nome" 
-                                class="form-label">
-                            </label>
-
-                            <input asp-for="Nome"
-                                class="form-control"
-                                placeholder="Digite seu nome" />
-                            <span asp-validation-for="Nome"
-                                class="text-danger">
-                            </span>
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="Email"
-                                class="form-label">
-                            </label>
-
-                            <input asp-for="Email"
-                                class="form-control"
-                                placeholder="Digite seu email" />
-                            <span asp-validation-for="Email"
-                                class="text-danger">
-                            </span>
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="Senha"
-                                class="form-label">
-                            </label>
-                            <input asp-for="Senha"
-                                type="password"
-                                class="form-control"
-                                placeholder="Digite sua senha" />
-                            <span asp-validation-for="Senha"
-                                class="text-danger">
-                            </span>
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="ConfirmarSenha"
-                                class="form-label">
-                            </label>
-                            <input asp-for="ConfirmarSenha"
-                                type="password"
-                                class="form-control"
-                                placeholder="Confirme sua senha" />
-                            <span asp-validation-for="ConfirmarSenha"
-                                class="text-danger">
-                            </span>
-                        </div>
-
-                        <div class="mb-3">
-                            <label asp-for="Role"
-                                class="form-label">
-                            </label>
-                            <select asp-for="Role"
-                                    class="form-select">
-                                <option value="">
-                                    Selecione o tipo de usuário
-                                </option>
-                                <option value="Aluno">
-                                    Aluno
-                                </option>
-                                <option value="Professor">
-                                    Professor
-                                </option>
-                            </select>
-
-                            <span asp-validation-for="Role"
-                                class="text-danger">
-                            </span>
-                        </div>
-
-                        <button type="submit"
-                                class="btn btn-primary w-100">
-                            Cadastrar
-                        </button>
-                    </form>
-                </div>
-
-                <div class="card-footer text-center">
-                    Já possui conta?
-                    <a asp-controller="Account"
-                        asp-action="Login">
-                        Entrar
-                    </a>
+                <div class="terminal-body">
+                    <span>&gt; INITIALIZING USER...</span>
+                    <span>&gt; PROFILE [READY]</span>
+                    <span>&gt; ACCESS LEVEL [PENDING]</span>
+                    <span>&gt; IDENTITY [REQUIRED]</span>
+                    <span class="terminal-caret">_</span>
                 </div>
             </div>
-        </div>
+
+            <div class="auth-intro-footer">
+                <span>EST. 2026</span>
+                <span>REGISTRATION NODE / 02</span>
+            </div>
+        </section>
+
+        <!-- FORMULÁRIO -->
+        <section class="auth-form-section">
+
+            <div class="auth-form-header">
+                <div>
+                    <span class="auth-form-index">02 / 02</span>
+                    <h2>CADASTRO</h2>
+                </div>
+
+                <div class="auth-symbol">
+                    +
+                </div>
+            </div>
+
+            <div class="auth-form-divider"></div>
+
+            <form asp-action="Register"
+                  method="post"
+                  class="auth-form">
+
+                <div asp-validation-summary="ModelOnly"
+                     class="auth-validation">
+                </div>
+
+                <div class="auth-field">
+                    <label asp-for="Nome">
+                        NOME
+                    </label>
+
+                    <div class="auth-input-wrap">
+                        <span class="auth-input-prefix">&gt;_</span>
+
+                        <input asp-for="Nome"
+                               class="auth-input"
+                               placeholder="Seu nome"
+                               autocomplete="name" />
+                    </div>
+
+                    <span asp-validation-for="Nome"
+                          class="auth-field-error">
+                    </span>
+                </div>
+
+                <div class="auth-field">
+                    <label asp-for="Email">
+                        E-MAIL
+                    </label>
+
+                    <div class="auth-input-wrap">
+                        <span class="auth-input-prefix">&#64;</span>
+
+                        <input asp-for="Email"
+                               class="auth-input"
+                               type="email"
+                               placeholder="seu@email.com"
+                               autocomplete="email" />
+                    </div>
+
+                    <span asp-validation-for="Email"
+                          class="auth-field-error">
+                    </span>
+                </div>
+
+                <div class="auth-fields-row">
+
+                    <div class="auth-field">
+                        <label asp-for="Senha">
+                            SENHA
+                        </label>
+
+                        <div class="auth-input-wrap">
+                            <span class="auth-input-prefix">#</span>
+
+                            <input asp-for="Senha"
+                                   type="password"
+                                   class="auth-input"
+                                   placeholder="••••••••"
+                                   autocomplete="new-password" />
+                        </div>
+
+                        <span asp-validation-for="Senha"
+                              class="auth-field-error">
+                        </span>
+                    </div>
+
+                    <div class="auth-field">
+                        <label asp-for="ConfirmarSenha">
+                            CONFIRMAR
+                        </label>
+
+                        <div class="auth-input-wrap">
+                            <span class="auth-input-prefix">#</span>
+
+                            <input asp-for="ConfirmarSenha"
+                                   type="password"
+                                   class="auth-input"
+                                   placeholder="••••••••"
+                                   autocomplete="new-password" />
+                        </div>
+
+                        <span asp-validation-for="ConfirmarSenha"
+                              class="auth-field-error">
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="auth-field">
+                    <label asp-for="Role">
+                        TIPO DE USUÁRIO
+                    </label>
+
+                    <div class="auth-select-wrap">
+                        <span class="auth-input-prefix">/</span>
+
+                        <select asp-for="Role"
+                                class="auth-input auth-select">
+                            <option value="">SELECIONE UMA FUNÇÃO</option>
+                            <option value="Aluno">ALUNO</option>
+                            <option value="Professor">PROFESSOR</option>
+                        </select>
+
+                        <span class="auth-select-arrow">↓</span>
+                    </div>
+
+                    <span asp-validation-for="Role"
+                          class="auth-field-error">
+                    </span>
+                </div>
+
+                <button type="submit" class="auth-submit">
+                    <span>CRIAR CONTA</span>
+                    <strong>→</strong>
+                </button>
+
+            </form>
+
+            <div class="auth-form-footer">
+                <span>JÁ POSSUI UMA CONTA?</span>
+
+                <a asp-controller="Account"
+                   asp-action="Login">
+                    ENTRAR <span>↗</span>
+                </a>
+            </div>
+
+        </section>
+
     </div>
 </div>
 

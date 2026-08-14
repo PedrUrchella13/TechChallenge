@@ -2,35 +2,59 @@
     ViewData["Title"] = "Acesso Negado";
 }
 
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card shadow text-center">
-                <div class="card-header bg-danger text-white">
-                    <h4 class="mb-0">
-                        Acesso Negado
-                    </h4>
-                </div>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <i class="bi bi-shield-lock"
-                            style="font-size: 60px;">
-                        </i>
-                    </div>
-                    <h5>
-                        Você não possui permissão para acessar esta página.
-                    </h5>
-                    <p class="text-muted mt-3">
-                        Entre em contato com o administrador caso
-                        acredite que isso seja um erro.
-                    </p>
-                    <a asp-controller="Home"
-                        asp-action="Index"
-                        class="btn btn-primary mt-3">
-                        Voltar para início
-                    </a>
-                </div>
-            </div>
+<div class="auth-page access-denied-page">
+    <div class="access-denied">
+
+        <div class="access-top">
+            <span>TC // SECURITY_403</span>
+
+            <span class="access-status">
+                ERROR 403
+            </span>
         </div>
+
+        <div class="access-content">
+
+            <div class="access-number">
+                403
+            </div>
+
+            <div class="access-copy">
+                <span class="auth-eyebrow">
+                    ACCESS CONTROL / RESTRICTED
+                </span>
+
+                <h1>
+                    ACESSO<br />
+                    <span>NEGADO.</span>
+                </h1>
+
+                <div class="auth-line"></div>
+
+                <p>
+                    Sua conta não possui as permissões necessárias
+                    para acessar este recurso.
+                </p>
+
+                <p class="access-hint">
+                    // Se você acredita que isso é um erro,
+                    // entre em contato com o administrador.
+                </p>
+
+                <a asp-controller="Home"
+                   asp-action="Index"
+                   class="auth-submit access-button">
+                    <span>VOLTAR AO INÍCIO</span>
+                    <strong>↩</strong>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="access-footer">
+            <span>TECHCHALLENGE SECURITY SYSTEM</span>
+            <span>NODE STATUS: ONLINE</span>
+        </div>
+
     </div>
 </div>

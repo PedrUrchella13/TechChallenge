@@ -2,15 +2,40 @@
 @inject SignInManager<IdentityUser> SignInManager
 
 @if (SignInManager.IsSignedIn(User))
-{
-    <span>Ola, @User.Identity?.Name!</span>
-    <form asp-action="Logout" method="post">
+{ <div class="tc-account"> <span class="tc-account-status"> <span class="tc-account-dot"></span>
+ONLINE </span>
+
+    <span class="tc-account-name">
+        @User.Identity?.Name
+    </span>
+
+    <form asp-action="Logout" method="post" class="tc-logout-form">
         @Html.AntiForgeryToken()
-        <button type="submit">Sair</button>
+
+        <button type="submit" class="tc-nav-button tc-nav-button-danger">
+            <span>SAIR</span>
+            <strong>↗</strong>
+        </button>
     </form>
+</div>
+
 }
 else
-{
-    <a asp-controller="Account" asp-action="Register">Cadastro </a>
-    <a asp-controller="Account" asp-action="Login"> Entrar</a>
+{ <div class="tc-auth-nav">
+
+    <a asp-controller="Account"
+       asp-action="Register"
+       class="tc-nav-button tc-nav-button-register">
+        <span>REGISTRAR-SE</span>
+        <strong>+</strong>
+    </a>
+
+    <a asp-controller="Account"
+       asp-action="Login"
+       class="tc-nav-button tc-nav-button-login">
+        <span>ENTRAR</span>
+        <strong>→</strong>
+    </a>
+
+</div>
 }
